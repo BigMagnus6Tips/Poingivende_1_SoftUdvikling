@@ -22,18 +22,21 @@ class TodoList
 	public:
 	std::vector<Task> todolist;
 	TodoList(){}
-	void addTask(Task task)
+
+	Task getTaskAt(int i)
 	{
+		return todolist.at(i);
+	}
+	void removeTask(int i)
+	{
+		todolist.erase(todolist.begin() + i);
+	}
+
+  void addTask(Task task)
+  {
 		todolist.push_back(task);
 
 	}
-	Task getTaskAt(int i) 
-	{
-		return todolist.at(i);
-
-	}
-
-    
 };
 
 int main() {
