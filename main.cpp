@@ -7,13 +7,31 @@ class Task
 {
 	public:
 	std::string _description;
+	bool completed;
 	Task(std::string description){
 		_description = description;
+		completed = false;
 	}
 	std::string getDescription()
 	{
 		return _description;
 	}
+	bool isCompleted()
+	{
+		if (completed)
+		{
+			return "Done";
+		}
+		else
+		{
+			return "Not done";
+		}
+	}
+	void setCompleted(bool c) 
+	{
+		completed = c;
+	}
+	
 };
 
 class TodoList
@@ -32,7 +50,7 @@ class TodoList
 		todolist.erase(todolist.begin() + i);
 	}
 
-  void addTask(Task task)
+  	void addTask(Task task)
   	{
 		todolist.push_back(task);
 
