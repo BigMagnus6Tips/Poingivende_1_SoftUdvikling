@@ -18,6 +18,14 @@ class TodoList
 	public:
 	std::vector<Task> todolist;
 	TodoList(){}
+	Task getTaskAt(int i)
+	{
+		return todolist.at(i);
+	}
+	void removeTask(int i)
+	{
+		todolist.erase(todolist.begin() + i);
+	}
 };
 
 int main() {
