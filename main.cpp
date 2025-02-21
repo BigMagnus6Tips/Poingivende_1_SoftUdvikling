@@ -7,10 +7,12 @@ class Task
 {
 	public:
 	std::string _description;
+  bool completed;
 	int dueDate; // YYYYMMDD
 	Task(std::string description, int duedate){
 		_description = description;
 		dueDate = duedate;
+		completed = false;
 	}
 	std::string getDescription()
 	{
@@ -20,6 +22,21 @@ class Task
 	int getDueDate()
 	{
 		return dueDate;
+	}
+	bool isCompleted()
+	{
+		if (completed)
+		{
+			return "Done";
+		}
+		else
+		{
+			return "Not done";
+		}
+	}
+	void setCompleted(bool c) 
+	{
+		completed = c;
 	}
 };
 
